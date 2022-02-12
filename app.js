@@ -11,6 +11,24 @@
     //UPDATE CASE TOTAL
     const producttotal=document.getElementById(product +'-total');
     producttotal.innerText=productNumber*price;
+
+    //calculate total
+    calculateTotal();
+}
+
+function getInputValue(){
+    const productInput=document.getElementById(product + '-number');
+    const productNumber= parseInt( productInput.value);
+    return productNumber;
+}
+
+
+function calculateTotal(){
+   
+    const phoneTotal=  getInputValue('phone') *1219;
+    const caseTotal=  getInputValue('case') *59;
+    const subTotal= phoneTotal+caseTotal;
+
 }
 
 document.getElementById('phone-plus').addEventListener('click', function(){
