@@ -16,7 +16,7 @@
     calculateTotal();
 }
 
-function getInputValue(){
+function getInputValue(product){
     const productInput=document.getElementById(product + '-number');
     const productNumber= parseInt( productInput.value);
     return productNumber;
@@ -28,6 +28,12 @@ function calculateTotal(){
     const phoneTotal=  getInputValue('phone') *1219;
     const caseTotal=  getInputValue('case') *59;
     const subTotal= phoneTotal+caseTotal;
+    const tax= subTotal /10;
+    const totalPrice= subTotal + tax;
+
+    document.getElementById('sub-total').innerText=subTotal;
+    document.getElementById('tax-amount').innerText=tax;
+    document.getElementById('total-price').innerText=totalPrice;
 
 }
 
